@@ -18,7 +18,7 @@ function App() {
     }
   }, []);
 
-  const logOut = () => {
+  const Logout = () => {
     AuthService.logout();
   };
 
@@ -44,7 +44,7 @@ function App() {
         {currentUser ? (
           <div className="navbar-nav ms-auto">
             <li className="nav-item">
-              <a href="/login" className="nav-link" onClick={logOut}>
+              <a href="/logout" className="nav-link" onClick={Logout}>
                 Logout
               </a>
             </li>
@@ -71,6 +71,7 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/private" element={<Private />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>

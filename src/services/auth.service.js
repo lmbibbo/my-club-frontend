@@ -7,12 +7,11 @@ const signup = (username, password) => {
     .post(API_URL + "management/api/v1/players/signup", {
       username,
       password,
-    })
+     })
     .then((response) => {
       if (response.data.accessToken) {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
-
       return response.data;
     });
 };
@@ -24,10 +23,10 @@ const login = (username, password) => {
       password,
     })
     .then((response) => {
+      console.log(response.data)
       if (response.data.accessToken) {
         localStorage.setItem("user", JSON.stringify(response.data));
       }
-      console.log(response.data)
       return response.data;
     });
 };
